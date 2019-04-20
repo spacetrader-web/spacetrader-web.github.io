@@ -1,0 +1,62 @@
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  
+<body>
+  <h1> Player Configuration </h1>
+  <form action="" method="post" novalidate>
+    <h3>
+        {{form.playerName.label}}<br>
+        <div class="ui input">
+          {{form.playerName(size=32)}}<br>
+        </div> </h3>
+    <h2> Skill Point Allocation </h2>
+    <h3> Total skill points must add up to 16 </h3>
+    <h3>   {{ form.pilotSkill.label }}<br>
+        <div class="ui input">
+
+          {{ form.pilotSkill(size=32)}} <br>
+        </div>
+    </h3>
+    <h3> {{ form.fighterSkill.label }}
+        <div class="ui input">
+          {{ form.fighterSkill(size=32)}}
+        </div>
+    </h3>
+    <h3> {{ form.traderSkill.label }}
+        <div class="ui input">
+          {{ form.traderSkill(size=32)}}
+        </div>
+    </h3>
+    <h3> {{ form.engineerSkill.label }}
+        <div class="ui input">
+          {{ form.traderSkill(size=32)}}
+        </div>
+    </h3>
+    <h2> Difficulty </h2>
+        <div class="ui simple active dropdown">
+      Select <i class="dropdown icon"></i>
+            <div class="menu">
+                <div class="item">Easy</div>
+                <div class="item">Medium</div>
+                <div class="item">Hard</div>
+            </div>
+        </div>
+    <p></p>
+    <button type="button" class="ui primary basic button">{{ form.submit() }}</button>
+
+
+
+
+
+  </form>
+  {% block content %}{% endblock %}
+</body>
+
+
+
+</html>
