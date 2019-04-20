@@ -5,9 +5,9 @@
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
-  
+
 <body>
-  <h1> Player Configuration </h1>
+  <BLOCKQUOTE> <h1> Player Configuration </h1>
   <form action="" method="post" novalidate>
     <h3>
         {{form.playerName.label}}<br>
@@ -22,17 +22,17 @@
           {{ form.pilotSkill(size=32)}} <br>
         </div>
     </h3>
-    <h3> {{ form.fighterSkill.label }}
+    <h3> {{ form.fighterSkill.label }} <br>
         <div class="ui input">
           {{ form.fighterSkill(size=32)}}
         </div>
     </h3>
-    <h3> {{ form.traderSkill.label }}
+    <h3> {{ form.traderSkill.label }} <br>
         <div class="ui input">
           {{ form.traderSkill(size=32)}}
         </div>
     </h3>
-    <h3> {{ form.engineerSkill.label }}
+    <h3> {{ form.engineerSkill.label }} <br>
         <div class="ui input">
           {{ form.traderSkill(size=32)}}
         </div>
@@ -55,7 +55,9 @@
 
   </form>
   {% block content %}{% endblock %}
+  </BLOCKQUOTE>
 </body>
+
 
 
 
