@@ -1,62 +1,114 @@
 <html>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.js"></script>
-<script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.js"></script>
+   <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
 
-<body>
-  <BLOCKQUOTE> <h1> Player Configuration </h1>
-  <form action="" method="post" novalidate>
-    <h3>
-        {{form.playerName.label}}<br>
-        <div class="ui input">
-          {{form.playerName(size=32)}}<br>
-        </div> </h3>
-    <h2> Skill Point Allocation </h2>
-    <h3> Total skill points must add up to 16 </h3>
-    <h3>   {{ form.pilotSkill.label }}<br>
-        <div class="ui input">
 
-          {{ form.pilotSkill(size=32)}} <br>
-        </div>
-    </h3>
-    <h3> {{ form.fighterSkill.label }} <br>
-        <div class="ui input">
-          {{ form.fighterSkill(size=32)}}
-        </div>
-    </h3>
-    <h3> {{ form.traderSkill.label }} <br>
-        <div class="ui input">
-          {{ form.traderSkill(size=32)}}
-        </div>
-    </h3>
-    <h3> {{ form.engineerSkill.label }} <br>
-        <div class="ui input">
-          {{ form.traderSkill(size=32)}}
-        </div>
-    </h3>
-    <h2> Difficulty </h2>
-                <select class="ui dropdown">
-      <option value="2">Easy</option>
-      <option value="1">Medium</option>
-      <option value="0">Difficult</option>
-    </select>
+   <body>
+      <div class="ui form">
+         <BLOCKQUOTE>
+            <h1> Player Configuration </h1>
+            <form action="/add_player" method="post" novalidate>
+              <div class="grouped fields">
+               <h3>
+                   <div class="field">
+
+                  <div class="ui input">
+                     <input type="text" name="name" placeholder="Player Name">
+                  </div>
+
+                  </div>
+               </h3>
+               <h2> Skill Point Allocation </h2>
+               <h3> Total skill points must add up to 16 </h3>
+               <h3>
+                  Pilot:<br>
+               </h3>
+                 <div class="field">
+               <div class="ui input">
+                  <input type="number" name="pilot" placeholder="Enter Skill Level" value="0" min="0" max="16">
+               </div>
+               </div>
+               <h3>
+                  Fighter:<br>
+
+               </h3>
+                 <div class="field">
+               <div class="ui input">
+                  <input type="number" name="fighter" placeholder="Enter Skill Level" value="0" min="0" max="16">
+               </div>
+               </div>
+               <h3>
+                  Trader:<br>
+               </h3>
+                 <div class="field">
+               <div class="ui input">
+                  <input type="number" name="trader" placeholder="Enter Skill Level" value="0" min="0" max="16">
+               </div>
+               </div>
+               <h3>
+                  Engineer:<br>
+
+               </h3>
+                 <div class="field">
+               <div class="ui input">
+                  <input type="number" name="engineer" placeholder="Enter Skill Level" value="0" min="0" max="16">
+               </div>
+               </div>
+
+
+               <h2> Difficulty </h2>
+
+                  <div class="field">
+                     <div class="ui radio checkbox">
+                        <input type="radio" name="difficulty" checked="checked">
+                        <label>Easy</label>
+                     </div>
+                  </div>
+                  <div class="field">
+                     <div class="ui radio checkbox">
+                        <input type="radio" name="difficulty">
+                        <label>Medium</label>
+                     </div>
+                  </div>
+                  <div class="field">
+                     <div class="ui radio checkbox">
+                        <input type="radio" name="difficulty">
+                        <label>Hard</label>
+                     </div>
+                  </div>
+
+               <p></p>
+               <input type="submit" value="Submit" class="ui button" />
+              </div>
+            </form>
+
+         </BLOCKQUOTE>
+      </div>
+   </body>
+
+   <!-- <body>
+     <form class="ui form" action="/add_player" method="post" novalidate>
+  <div class="field">
+    <label>First Name</label>
+    <input type="text" name="first-name" placeholder="First Name">
+  </div>
+  <div class="field">
+    <label>Last Name</label>
+    <input type="text" name="last-name" placeholder="Last Name">
+  </div>
+  <div class="field">
+    <div class="ui checkbox">
+      <input type="checkbox" tabindex="0" class="hidden">
+      <label>I agree to the Terms and Conditions</label>
     </div>
-    <p></p>
-    <button type="button" class="ui primary basic button">{{ form.submit() }}</button>
+  </div>
+  <button class="ui button" type="submit">Submit</button>
+</form>
 
 
-
-
-
-  </form>
-  {% block content %}{% endblock %}
-  </BLOCKQUOTE>
-</body>
-
-
-
-
+  </body> -->
 </html>
