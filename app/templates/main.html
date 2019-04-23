@@ -1,4 +1,29 @@
-<head>
-<h1> Configured </h1>
-<p> {{form.playerName.data}}</p>
-</head>
+
+
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.js"></script>
+<script
+   src="https://code.jquery.com/jquery-3.1.1.min.js"
+   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+   crossorigin="anonymous"></script>
+   <head>
+   <h1> Welcome back,  {{player.playerName}}</h1>
+
+
+
+   <h2> Player Stats: </h2>
+   <h4> Pilot Skill: {{player.pilotSkill}} </h4>
+   <h4> Trader Skill: {{player.traderSkill}} </h4>
+   <h4> Fighter Skill: {{player.fighterSkill}} </h4>
+   <h4> Engineer Skill: {{player.engineerSkill}} </h4>
+   <h4> Credits: {{player.credits}} </h4>
+   <h4> Universe: {{player.universe}} </h4>
+
+
+
+   </head>
+
+
+
+</html>

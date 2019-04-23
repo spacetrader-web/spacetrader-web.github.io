@@ -1,23 +1,45 @@
 <html>
+
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css" />
    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.js"></script>
    <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous">
+    </script>
+
+      <script>
+        $(document).ready(function(){
+          $("#configure").submit(function(event){
+            event.preventDefault();
+            var formData = $("#configure").serialize();
+            $.post("/add_player", formData, function(result){
+              console.log("hello")
+              window.location.href = "/get_player"
+
+            })
+
+          });
+
+
+
+
+        });
+
+      </script>
 
 
    <body>
       <div class="ui form">
          <BLOCKQUOTE>
             <h1> Player Configuration </h1>
-            <form action="/add_player" method="post" novalidate>
+            <form id="configure" novalidate>
               <div class="grouped fields">
                <h3>
                    <div class="field">
 
                   <div class="ui input">
-                     <input type="text" name="name" placeholder="Player Name">
+                     <input type="text" id="text" name="name" required placeholder="Player Name"  required>
                   </div>
 
                   </div>
@@ -29,7 +51,7 @@
                </h3>
                  <div class="field">
                <div class="ui input">
-                  <input type="number" name="pilot" placeholder="Enter Skill Level" value="0" min="0" max="16">
+                  <input type="number" name="pilot" placeholder="Enter Skill Level" id="numberrange" value="0" min="0" max="16" required>
                </div>
                </div>
                <h3>
@@ -38,7 +60,7 @@
                </h3>
                  <div class="field">
                <div class="ui input">
-                  <input type="number" name="fighter" placeholder="Enter Skill Level" value="0" min="0" max="16">
+                  <input type="number" name="fighter" placeholder="Enter Skill Level"  id="numberrange"value="0" min="0" max="16" required>
                </div>
                </div>
                <h3>
@@ -46,7 +68,7 @@
                </h3>
                  <div class="field">
                <div class="ui input">
-                  <input type="number" name="trader" placeholder="Enter Skill Level" value="0" min="0" max="16">
+                  <input type="number" name="trader" placeholder="Enter Skill Level" id="numberrange" value="0" min="0" max="16" required>
                </div>
                </div>
                <h3>
@@ -55,7 +77,7 @@
                </h3>
                  <div class="field">
                <div class="ui input">
-                  <input type="number" name="engineer" placeholder="Enter Skill Level" value="0" min="0" max="16">
+                  <input type="number" name="engineer" placeholder="Enter Skill Level" id="numberrange" value="0" min="0" max="16" required>
                </div>
                </div>
 
@@ -64,7 +86,7 @@
 
                   <div class="field">
                      <div class="ui radio checkbox">
-                        <input type="radio" name="difficulty" checked="checked">
+                        <input type="radio" name="difficulty" checked="checked" >
                         <label>Easy</label>
                      </div>
                   </div>
@@ -85,6 +107,7 @@
                <input type="submit" value="Submit" class="ui button" />
               </div>
             </form>
+
 
          </BLOCKQUOTE>
       </div>
